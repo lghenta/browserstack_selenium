@@ -1,0 +1,48 @@
+browserstack:
+  # Credentials for BrowserStack imported from Jenkins
+  username: ${BROWSERSTACK_USERNAME}  
+  access_key: ${BROWSERSTACK_ACCESS_KEY}  
+
+# URL for connecting to BrowserStack's remote WebDriver hub
+browserstack_url: "https://hub-cloud.browserstack.com/wd/hub"
+
+# Defines our test environments with different browser and device configurations
+capabilities:
+  - browser: "Chrome"  
+    browser_version: "latest"  
+    os: "Windows"  
+    os_version: "10"  
+    build: "bstack-demo-test-1"  
+    name: "Windows 10 Chrome Test"  
+    allowAllCookies: true  
+    networkLogs: true  
+    consoleLogs: info  
+    acceptInsecureCerts: true  
+  - browser: "Firefox"  
+    browser_version: "latest"  
+    os: "OS X"  
+    os_version: "Ventura"  
+    build: "bstack-demo-test-1"  
+    name: "macOS Ventura Firefox Test"  
+    allowAllCookies: true  
+    networkLogs: true  
+    consoleLogs: info  
+    acceptInsecureCerts: true  
+
+  - device: "Samsung Galaxy S22"  
+    browser: "samsung"  
+    os_version: "12.0"  
+    real_mobile: "true"  
+    build: "bstack-demo-test-1"  
+    name: "Samsung Galaxy S22 Test"  
+    allowAllCookies: true  
+    networkLogs: true  
+    consoleLogs: info  
+    acceptInsecureCerts: true  
+    w3c: true  
+
+# URL and credentials for the test site accessed within the virtual environment
+test_site:
+  url: "https://www.bstackdemo.com/signin"  
+  username: "demouser"  
+  password: "testingisfun99"  
